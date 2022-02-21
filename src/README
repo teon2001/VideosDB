@@ -1,0 +1,41 @@
+Necula Andreea 323 CD b
+
+    Am facut 3 pachete pentru cele 3 cerinte: comenzi, queri-uri si recomandari.
+Am modificat clasele date pentru a rentine informatii suplimentare. De asemenea,
+fiecare mini-cerinta este facuta intr-o clasa noua.
+    Pentru comenzi:
+-> Favorite: am gasit userul, am vazut daca a vizionat deja acel video. Daca
+l-a vazut, vad daca e deja la favorite si il adaug sau nu.
+->View: Daca a fost deja vizionat, incrementez, altfel il adauge
+la history
+->Rating: verific daca e vizionat sau nu, dupa care vad daca e film sau serial
+si il adaug cu nota respectiva.
+    Pentru query:
+-> Pentru rating average exita 2 cazuri:
+filme: unde am luat toti useri (ce nota au dat) si am impartit la nuamrul
+de useri
+serial: pentru fiecare sezon in parte media si dupa media pe toate
+sezoanele
+->Pentru premii, am luat fiecare user in parte si am vazut daca are premiile
+specificate in filtre, dupa care i-am ordonat dupa numarul lor
+->Pentru filtrare am ales cateva cazuri particulare foarte probabile si foarte
+usoare, dupa care am folosit regex (de exemplu, cazul Irish-American).
+->Pentru rating per Actor, am luat rating.ul pentru fiecare fil in care
+a jucat acel actor si am facut o medie.
+->Pentru longest, indeosebi pt serial, am calculat suma tuturor sezoanelor
+si aceea era durata unui serial;
+    Pentru recomandari:
+->In fiecare clasa pe care am facut o am verificat daca user.ul este normal
+premium
+->Standard intoarce primul video nevazut, deci am luat la rand fiecare film
+dupa serial si am verificat sa nu l fi vazut
+->La best_unseen sortez video.urile in functie de rating ul cel mai bun, adica
+descrescator si apoi vad daca l-a vazut user ul sau nu.
+->La clasa popular am luat o lista cu toate genurile, am parcurs pentru fiecare
+user video.urile pe care le a vazut si am vazut din ce genuri sunt acele
+video.uri, astfel facand o oranduire a popularitatii genurilor
+->Pentru favorite, am determinat numarul de aparitii in lista de
+favorite ale userilor pentru fiecare video si am intors un video in
+functie de nr de aparitii si cu conditia sa nu l fi vazut.
+->Pentru search, am ales filmele dupa gen si apoi am intors in functie de
+conditia daca a vazut video.ul respectiv sau nu.
